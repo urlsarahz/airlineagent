@@ -1,12 +1,11 @@
 # Airline Booking AI Agent
 
-This repository contains a runnable reference agent for the Phonely airline-booking assignment. It includes:
+This repo contains a runnable reference agent for Phonely's airline-booking assignment. It includes:
 
 - A deterministic voice-agent conversation engine.
 - A mock flight service with airport resolution, availability search, booking, and confirmation delivery.
 - A small HTTP API that can be wired to Phonely API Request blocks.
 - Phonely-ready guidelines, flow notes, knowledge base copy, and a Postman collection.
-- A 5-minute demo-video generation script and narration.
 
 ## Quick Start
 
@@ -35,7 +34,7 @@ curl -s -X POST http://localhost:8080/flights \
 1. Resolve departure and destination city or airport names into IATA codes.
 2. Validate the travel date. It must be today or within the next year.
 3. Search mock flight inventory and present multiple options.
-4. Collect the passenger name and contact info.
+4. Collect the passenger's name and contact info.
 5. Book the selected flight and generate a confirmation number.
 6. Send confirmation by SMS for US phone numbers and email otherwise.
 7. Transfer immediately if the caller asks for customer support.
