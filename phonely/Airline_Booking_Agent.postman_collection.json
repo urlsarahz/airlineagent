@@ -1,0 +1,123 @@
+{
+  "info": {
+    "name": "Airline Booking Agent",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/health"
+      }
+    },
+    {
+      "name": "Resolve Airport",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"query\":\"Los Angeles\"}"
+        },
+        "url": "{{base_url}}/resolve-airport"
+      }
+    },
+    {
+      "name": "Search Flights",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"origin\":\"Los Angeles\",\"destination\":\"New York\",\"date\":\"2026-06-12\"}"
+        },
+        "url": "{{base_url}}/flights"
+      }
+    },
+    {
+      "name": "No Flights AAL to YVR",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"origin\":\"AAL\",\"destination\":\"YVR\",\"date\":\"2026-06-12\"}"
+        },
+        "url": "{{base_url}}/flights"
+      }
+    },
+    {
+      "name": "Book Flight",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"flight_id\":\"LAX-JFK-2026-06-12-PX101\",\"passenger_name\":\"Sarah Zhang\",\"contact\":\"+1 415 555 0199\"}"
+        },
+        "url": "{{base_url}}/book"
+      }
+    },
+    {
+      "name": "Policy",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"topic\":\"refund policy\"}"
+        },
+        "url": "{{base_url}}/policy"
+      }
+    },
+    {
+      "name": "Agent Respond",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"session_id\":\"demo\",\"message\":\"I need to fly from Los Angeles to New York on June 12 2026\"}"
+        },
+        "url": "{{base_url}}/agent/respond"
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+[project]
+name = "airline-booking-agent"
+version = "0.1.0"
+description = "Reference airline booking voice agent for Phonely"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
