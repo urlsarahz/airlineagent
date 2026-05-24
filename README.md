@@ -3,8 +3,8 @@
 This repo contains a runnable agent for Phonely's airline-booking assignment. It includes:
 
 - A deterministic voice-agent conversation engine.
-- A mock flight service with airport resolution, availability search, booking, and confirmation delivery.
-- A small HTTP API that can be wired to Phonely API Request blocks.
+- A simple airport assistant with flight availability search, booking, and confirmation delivery.
+- An HTTP API that can be wired to Phonely API Request blocks.
 - Phonely-ready guidelines, workflow notes, knowledge base copy, and a Postman collection.
 
 ## Quick Start
@@ -39,13 +39,3 @@ curl -s -X POST http://localhost:8080/flights \
 6. Send confirmation by SMS for US phone numbers and email otherwise.
 7. Transfer immediately if the caller asks for customer support.
 8. Answer refund and change-policy questions from the knowledge base.
-
-The required no-flight test case is implemented: `AAL` to `YVR` returns a 404-style no-availability error.
-
-## Phonely Assets
-
-- [phonely/agent_guidelines.md](/Users/simonzh/Documents/phonely_sarahz/phonely/agent_guidelines.md)
-- [phonely/flow_blueprint.md](/Users/simonzh/Documents/phonely_sarahz/phonely/flow_blueprint.md)
-- [phonely/knowledge_base.md](/Users/simonzh/Documents/phonely_sarahz/phonely/knowledge_base.md)
-- [phonely/api_contract.md](/Users/simonzh/Documents/phonely_sarahz/phonely/api_contract.md)
-- [phonely/Airline_Booking_Agent.postman_collection.json](/Users/simonzh/Documents/phonely_sarahz/phonely/Airline_Booking_Agent.postman_collection.json)
